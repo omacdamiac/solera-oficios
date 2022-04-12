@@ -1,0 +1,40 @@
+{
+  "oficios": [
+    {
+      "name": "Electricista",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit amet consectetur adipisicing elit.",
+      "category": "Autos",
+      "id": 1
+    },
+    {
+      "name": "Auxilio Mecanico",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit amet consectetur adipisicing elit.",
+      "category": "Autos",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Ambulancia",
+      "description": "pintado de paredes por metro",
+      "category": "Salud"
+    },
+    {
+      "name": "Gasfitero",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit amet consectetur adipisicing elit.",
+      "category": "Hogar",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Pintira",
+      "description": "pintado de paredes por metro",
+      "category": "Hogar"
+    },
+    {
+      "id": 6,
+      "name": "Enfermera",
+      "description": "Cuidado de adultos",
+      "category": "Salud"
+    }
+  ]
+}
