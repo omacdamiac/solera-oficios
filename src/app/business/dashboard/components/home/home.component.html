@@ -1,0 +1,95 @@
+<h2 class="text-center">Servicios</h2>
+<nav>
+  <ul>
+    <li><a (click)="test()">Todos</a></li>
+    <li><a (click)="test()">Autos</a></li>
+    <li><a (click)="test()">Salud</a></li>
+    <li><a (click)="test()">Hogar</a></li>
+  </ul>
+</nav>
+<div class="row">
+  <div class="col-12 col-md-9">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <app-item
+            class="col-12 col-md-4"
+            *ngFor="let item of items"
+            [item]="item"
+            (miEvento)="edit($event)"
+          ></app-item>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-12">
+    <!-- FORMULARIO -->
+    <mat-card class="mb-3">
+      <mat-card-header>
+        <mat-card-title>Servicio</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="form">
+          <app-input
+            [formParent]="form"
+            [label]="inputName.text"
+            [placeholder]="inputName.place"
+            [name]="inputName.name"
+            [required]="inputName.required"
+          ></app-input>
+          <app-input
+            [formParent]="form"
+            [label]="inputDescription.text"
+            [placeholder]="inputDescription.place"
+            [name]="inputDescription.name"
+            [required]="inputDescription.required"
+          ></app-input>
+          <app-input
+          [formParent]="form"
+          [label]="inputCategoria.text"
+          [placeholder]="inputCategoria.place"
+          [name]="inputCategoria.name"
+          [required]="inputCategoria.required"
+        ></app-input>
+        <input type="hidden" formControlName="id">
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <span *ngIf="valida" class="w-100 isvalid text-center"
+          >Rellenar campos requeridos</span
+        >
+        <app-button
+        *ngIf="actionForm"
+          [color]="buttonModificar.color"
+          [texto]="buttonModificar.texto"
+          [type]="buttonModificar.type"
+          (evento)="update()"
+        ></app-button>
+        <app-button
+        *ngIf="!actionForm"
+          [color]="buttonGrabar.color"
+          [texto]="buttonGrabar.texto"
+          [type]="buttonGrabar.type"
+          (evento)="save()"
+        ></app-button>
+        <app-button
+        *ngIf="!actionForm"
+        [color]="buttonCancelar.color"
+        [texto]="buttonCancelar.texto"
+        [type]="buttonCancelar.type"
+        (evento)="reset()"
+      ></app-button>
+      <app-button
+      *ngIf="actionForm"
+      [color]="buttonCancelarModificacion.color"
+      [texto]="buttonCancelarModificacion.texto"
+      [type]="buttonCancelarModificacion.type"
+      (evento)="reset()"
+    ></app-button>
+        <!-- <button mat-button color="primary" (click)="save()">Editar</button>
+       <button mat-button color="primary">Eliminar</button> -->
+      </mat-card-actions>
+    </mat-card>
+    <!-- END FORMULARIO -->
+  </div>
+</div>
